@@ -10,18 +10,19 @@ class studmark {
     void readdata() {
         Scanner m_r_n = new Scanner(System.in);
 
-        System.out.println("Enter number of students:");
+        System.out.println("Enter numbers of subject:");
         n = m_r_n.nextInt();
         mark = new float[n];
         name = new String[n];
 
         for (int i = 0; i < n; i++) {
+            System.out.println("Enter name of  subject:");
+            name[i]=m_r_n.next();
             System.out.println("Enter marks of student (below 100):");
             float usermark = m_r_n.nextFloat();
             if (usermark <= 100) {
                 mark[i] = usermark;
-                System.out.println("Enter name:");
-                name[i] = m_r_n.next();
+                
             } else {
                 System.out.println("Enter a valid mark");
                 i--;
@@ -31,7 +32,7 @@ class studmark {
 
     void displaydata() {
         for (int i = 0; i < n; i++) {
-            System.out.println("Name of student: " + name[i] + " | Mark of student: " + mark[i]);
+            System.out.println("Name of subject: " + name[i] + " | Mark of student: " + mark[i]);
         }
     }
 
@@ -55,4 +56,3 @@ class studmark {
         objread.addtotalmark();
     }
 }
-
